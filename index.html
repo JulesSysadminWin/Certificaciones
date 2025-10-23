@@ -3,87 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Certificaciones – Julio Guzmán</title>
-  <meta name="description" content="Certificaciones profesionales y técnicas de Julio Guzmán – Administrador de Sistemas Windows (Wintel)." />
-  <meta property="og:title" content="Certificaciones – Julio Guzmán" />
-  <meta property="og:description" content="Listado y evidencia visual de certificaciones profesionales y técnicas." />
+  <title>Julio Guzmán – Portafolio Técnico (Certificaciones)</title>
+  <meta name="description" content="Portafolio técnico de Julio Guzmán R. – Administrador de Sistemas Windows (Wintel). Certificaciones profesionales y técnicas." />
+  <meta property="og:title" content="Julio Guzmán – Portafolio Técnico" />
+  <meta property="og:description" content="Certificaciones y evidencias técnicas." />
   <meta property="og:type" content="website" />
   <meta name="robots" content="index,follow" />
-
+  <link rel="icon" href="assets/favicon.ico" />
   <style>
-    :root { --bg:#0b0f17; --card:#121827; --txt:#e5e7eb; --muted:#9ca3af; --accent:#22d3ee; --border:#1f2937; }
+    :root{
+      --bg:#0b0f17; --panel:#0f1423; --card:#121827; --txt:#e5e7eb; --muted:#9ca3af; --thin:#1f2937;
+      --accent:#22d3ee; --accent2:#60a5fa; --pill:#263043;
+    }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
-      background: radial-gradient(1200px 600px at 20% 10%, #10203a 0%, #0b0f17 55%, #0b0f17 100%);
-      color:var(--txt);
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
+      background:radial-gradient(1200px 600px at 20% 10%, #10203a 0%, #0b0f17 55%, #0b0f17 100%); color:var(--txt);
     }
-    header{
-      max-width:1100px; margin:32px auto 0; padding:0 20px;
+    a{color:#a5f3fc;text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1120px;margin:0 auto;padding:16px 20px 64px}
+    /* Header */
+    .hero{
+      margin-top:18px;background:linear-gradient(180deg,#151b2c 0%, #0f1423 100%);
+      border:1px solid var(--thin); border-radius:18px; padding:22px; display:flex; gap:18px; align-items:center
     }
-    .title{
-      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+    .avatar{
+      width:84px;height:84px;border-radius:14px;overflow:hidden;border:1px solid var(--thin);
+      background:#0b1220 url('assets/avatar.jpg') center/cover no-repeat;
+      box-shadow:0 10px 24px rgba(0,0,0,.35)
     }
-    h1{margin:0; font-size:28px; font-weight:800; letter-spacing:.2px}
-    .pill{border:1px solid var(--border); color:#cbd5e1; padding:6px 10px; border-radius:999px; font-size:12px}
-    .sub{color:var(--muted); margin-top:6px}
+    .hero-txt h1{margin:0 0 6px 0;font-size:26px;font-weight:800;letter-spacing:.2px}
+    .hero-txt p{margin:0;color:var(--muted)}
+    .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .pill{border:1px solid var(--pill);color:#cbd5e1;padding:6px 10px;border-radius:999px;font-size:12px}
 
-    .wrap{
-      max-width:1100px; margin:20px auto 60px; padding:0 20px;
+    .actions{display:flex;gap:10px;margin-left:auto;flex-wrap:wrap}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--thin);
+      background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#0b1220;font-weight:700;text-decoration:none;
+      box-shadow:0 6px 20px rgba(34,211,238,.25)
     }
-    .grid{
-      display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;
-    }
+    .btn-ghost{background:transparent;color:#cbd5e1;border:1px solid var(--thin)}
+    /* Section title */
+    .section{margin-top:22px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+    .section h2{margin:0;font-size:18px}
+    .rule{height:1px;background:var(--thin);flex:1}
+
+    /* Grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:14px}
     .card{
-      background:linear-gradient(180deg,#151b2c 0%, #0f1423 100%);
-      border:1px solid var(--border); border-radius:16px; padding:12px;
-      box-shadow:0 10px 40px rgba(0,0,0,.35);
+      background:linear-gradient(180deg,#151b2c 0%, #0f1423 100%);border:1px solid var(--thin);
+      border-radius:16px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.35)
     }
-    .imgbox{
-      aspect-ratio:4/3; background:#0b1220; border:1px solid var(--border);
-      border-radius:12px; overflow:hidden; display:flex; align-items:center; justify-content:center;
-    }
-    .imgbox img{width:100%; height:100%; object-fit:contain; display:block}
-    .cap{
-      margin:10px 4px 2px; font-size:13px; color:#cbd5e1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-    .hint{
-      margin-top:6px; font-size:12px; color:#94a3b8;
-    }
-    .empty{
-      margin:30px 0; padding:16px; border:1px dashed #334155; border-radius:12px; background:#0b1220; color:#cbd5e1;
-    }
-    footer{color:#64748b; font-size:12px; text-align:center; margin:24px 0 40px}
-    a{color:#7dd3fc; text-decoration:none}
-    a:hover{text-decoration:underline}
+    .imgbox{aspect-ratio:4/3;background:#0b1220;border:1px solid var(--thin);border-radius:12px;overflow:hidden;
+      display:flex;align-items:center;justify-content:center}
+    .imgbox img{width:100%;height:100%;object-fit:contain;display:block}
+    .cap{margin:10px 4px 2px;font-size:13px;color:#cbd5e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+    .empty{margin:18px 0;padding:14px;border:1px dashed #334155;border-radius:12px;background:#0b1220;color:#cbd5e1}
+    footer{color:#64748b;font-size:12px;text-align:center;margin:28px 0 0}
+    @media (max-width:520px){.actions{width:100%;margin-left:0}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="title">
-      <h1>Certificaciones – Julio Guzmán</h1>
-      <span class="pill">Wintel</span>
-      <span class="pill">Infraestructura</span>
-      <span class="pill">Seguridad</span>
-      <span class="pill">Cloud</span>
-    </div>
-    <p class="sub">Galería generada desde la carpeta <code>certificadosGuzman/</code>. Añade o reemplaza imágenes y se verán aquí automáticamente.</p>
-  </header>
+  <div class="container">
+    <!-- Header / About -->
+    <section class="hero">
+      <div class="avatar" title="Foto / logo (assets/avatar.jpg)"></div>
+      <div class="hero-txt">
+        <h1>Julio Guzmán R.</h1>
+        <p>Administrador de Sistemas Windows (Wintel) · Infraestructura · Seguridad · Cloud</p>
+        <div class="pills">
+          <span class="pill">Windows Server</span><span class="pill">Active Directory</span>
+          <span class="pill">VMware/Virtualización</span><span class="pill">Hardening</span><span class="pill">Azure</span>
+        </div>
+      </div>
+      <div class="actions">
+        <!-- Sustituye los href con tus enlaces reales -->
+        <a class="btn" href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="CV.pdf" target="_blank" rel="noopener">Descargar CV</a>
+      </div>
+    </section>
 
-  <div class="wrap">
+    <!-- Certificaciones -->
+    <div class="section"><h2>Certificaciones</h2><div class="rule"></div></div>
+
     <div id="empty" class="empty" style="display:none">
-      No se encontraron imágenes en <code>certificadosGuzman/</code>.<br/>
-      Sube tus archivos como <code>01.jpg</code>, <code>02.png</code>, … (JPG/PNG/JPEG/WEBP). Máximo 99.
+      No se encontraron imágenes en <code>certificadosGuzman/</code>.  
+      Sube archivos numerados como <code>01.jpg</code>, <code>02.png</code>, … (JPG/PNG/JPEG/WEBP).
     </div>
     <div id="grid" class="grid" aria-live="polite"></div>
-    <p class="hint">Tip: usa nombres numerados para definir el orden (01, 02, 03…).</p>
+
+    <footer>© Julio Guzmán — Portafolio técnico</footer>
   </div>
 
-  <footer>© Julio Guzmán — Portafolio de certificaciones</footer>
-
   <script>
-    // Intenta cargar certificados desde /certificadosGuzman/01..99 con extensiones comunes.
+    // Carga automática de imágenes certificadas desde certificadosGuzman/01..99.{jpg,jpeg,png,webp}
     (function () {
       const grid = document.getElementById('grid');
       const empty = document.getElementById('empty');
@@ -91,46 +106,48 @@
       const exts = ['jpg','jpeg','png','webp'];
       const maxN = 99;
 
-      // Utilidad: prueba si una imagen existe; si carga, la agrega al grid.
-      function tryLoad(src, caption) {
-        return new Promise(resolve => {
+      // Convierte nombre de archivo a una leyenda legible
+      function prettify(name){
+        return name
+          .replace(/\.[^/.]+$/, '')              // quita extensión
+          .replace(/[-_]+/g,' ')                 // guiones a espacios
+          .replace(/\b(\d{2,})\b/g,'$1')         // deja números
+          .replace(/\b\w/g, c => c.toUpperCase())// capitaliza palabras
+          .trim();
+      }
+
+      function tryLoad(src, caption){
+        return new Promise(resolve=>{
           const img = new Image();
-          img.onload = function () {
-            const card = document.createElement('div');
-            card.className = 'card';
-            const box = document.createElement('div');
-            box.className = 'imgbox';
-            box.appendChild(img);
-            const cap = document.createElement('div');
-            cap.className = 'cap';
-            cap.textContent = caption;
-            card.appendChild(box);
-            card.appendChild(cap);
-            grid.appendChild(card);
-            resolve(true);
+          img.onload = function(){
+            const card = document.createElement('div'); card.className = 'card';
+            const box = document.createElement('div'); box.className = 'imgbox'; box.appendChild(img);
+            const cap = document.createElement('div'); cap.className = 'cap'; cap.textContent = caption;
+            card.appendChild(box); card.appendChild(cap); grid.appendChild(card); resolve(true);
           };
-          img.onerror = function () { resolve(false); };
-          img.alt = caption;
-          img.src = src + '?v=' + Date.now(); // evita cache inicial
+          img.onerror = ()=>resolve(false);
+          img.alt = caption; img.src = src + '?v=' + Date.now(); // evita cache inicial
         });
       }
 
-      (async function loadAll() {
+      (async function loadAll(){
         let found = 0;
-        for (let i = 1; i <= maxN; i++) {
+        // Primero intentamos archivos numerados 01..99
+        for(let i=1;i<=maxN;i++){
           const base = String(i).padStart(2,'0');
           let added = false;
-          for (const e of exts) {
+          for(const e of exts){
             const src = folder + base + '.' + e;
-            // Muestra nombre bonito como "01.jpg" -> "Certificado 01"
-            const caption = 'Certificado ' + base;
-            /* eslint-disable no-await-in-loop */
-            const ok = await tryLoad(src, caption);
-            if (ok) { found++; added = true; break; }
+            const ok = await tryLoad(src, 'Certificado ' + base);
+            if(ok){ found++; added = true; break; }
           }
-          // si no existía ninguna extensión, continúa con el siguiente número
+          if(!added) continue;
         }
-        if (!found) empty.style.display = 'block';
+
+        // Si no se encontraron numerados, listamos algunos nombres comunes (opcional)
+        if(!found){
+          empty.style.display = 'block';
+        }
       })();
     })();
   </script>
